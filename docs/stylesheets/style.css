@@ -9,3 +9,17 @@ h1, h2, h3 {
   font-family: 'Ubuntu Mono';
   border-radius: 5px;
 }
+.remark-inline-code {
+  background-color: #ddd;
+  padding: 3px;
+}
+.inverse {
+  background-color: #222;
+  color: #fff;
+}
+.center {
+  text-align: center;
+}
+.middle {
+  vertical-align: middle;
+}
