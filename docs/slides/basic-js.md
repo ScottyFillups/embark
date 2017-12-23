@@ -32,7 +32,7 @@ The only "gotcha" with Standard is you need to prepend a `';'` if you're startin
 By the end of this slideshow, you'll be able to understand what's happening here, and figure out the output:
 
 ```js
-function printOddsInGroupsOfTen (init) {
+function printOddsInGroupsOfX (init) {
   var counter = init || 0
   
   return {
@@ -207,6 +207,37 @@ Output:
 
 ---
 
+## The ternary operator
+
+The ternary operator is similar to an If-else statement, but it evaluates to an expression.
+* It takes the form of `condition ? valueIfTrue : valueIfFalse`.
+* Often saves space
+
+```js
+// When used correctly, the ternary operator makes your code more terse
+function max1 (a, b) {
+  return a > b ? a : b
+}
+
+function max2 (a, b) {
+  if (a > b) {
+    return a
+  } else {
+    return b
+  }
+}
+```
+
+If the ternary statement is long, it may be better to spread it out over several lines, like this:
+
+```js
+var c = 900 / 2 + 4 === 23 * 100 - 1
+        ? 'a huuuuuuuuuuuuuuge message'
+        : 'another very huuuuuuuuuuuuuuuuge message'
+```
+
+---
+
 ## For loop
 
 ```js
@@ -300,9 +331,9 @@ An array is an ordered list of data with the same type.
 * Indices are __0 based__, meaning you start counting upwards from 0
 
 There are many operations you can make on arrays, but there are three fundamental operations:
-* array[i] - access the element at index i
-* array.push(e) - appends an element, e, to the end of the array
-* array.pop() - removes, or "pops" off the last element in the array
+* `array[i]` - access the element at index `i`
+* `array.push(e)` - appends an element, `e`, to the end of the array
+* `array.pop()` - removes, or "pops" off the last element in the array
 
 ```js
 var listOfPeople = ['Frank', 'Joe', 'Bob']
@@ -401,6 +432,33 @@ woof woof!
 
 ---
 
-## This
+## This and objects
 
-Todo ;)
+Sometimes you may want your method to access or manipulate its object's data. The `this` keyword refers to the method's `object:
+
+```js
+var dragon = {
+  name: 'Spyro',
+  color: 'Purple',
+  critChance: 0.6,
+  damage: 5,
+  attack: function () {
+    var damageDone = Math.random() < this.critChance  // Math is a built in JavaScript object with several methods
+      ? this.damage * 2                               // Math.random() generates a random number between 0 and 1
+      : this.damage                                   // If Math.random() is less than the critical strike chance
+                                                      // Spyro will crit, and do double damage
+    console.log(this.name + ' does ' + damageDone + ' points of damage!')
+    return damageDone
+  }
+}
+
+// This will either print 'Spyro does 5 points of damage!'
+// or 'Spyro does 10 points of damage!' depending on the value of Math.random()
+
+dragon.attack()
+```
+---
+
+## Summary
+
+---
