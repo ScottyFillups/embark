@@ -3,7 +3,7 @@
 const queryString = require('query-string')
 
 const filename = queryString.parse(window.location.search).s
-const path = `/slides/${filename}.md`
+const path = `./slides/${filename}.md`
 
 remark.create({
   ratio: '16:9',
