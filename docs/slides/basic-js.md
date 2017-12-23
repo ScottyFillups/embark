@@ -432,9 +432,9 @@ woof woof!
 
 ---
 
-## This and objects
+## this
 
-Sometimes you may want your method to access or manipulate its object's data. The `this` keyword refers to the method's `object:
+Sometimes you may want your method to access or manipulate its object's data. The `this` keyword refers to the method's object:
 
 ```js
 var dragon = {
@@ -460,5 +460,7 @@ dragon.attack()
 ---
 
 ## Summary
+
+
 
 ---
