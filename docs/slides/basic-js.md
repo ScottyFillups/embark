@@ -399,12 +399,12 @@ There are many operations you can make on arrays, but there are three fundamenta
 ```js
 var listOfPeople = ['Frank', 'Joe', 'Bob']
 
-list.pop()
-list.pop()
-list.push('Philip')
+listOfPeople.pop()
+listOfPeople.pop()
+listOfPeople.push('Philip')
 
-// list is now ['Frank', 'Philip']
-var person = list[1]      // person now stores 'Philip'
+// listOfPeople is now ['Frank', 'Philip']
+var person = listOfPeople[1]      // person now stores 'Philip'
 ```
 
 ---
