@@ -124,8 +124,8 @@ var a = 5   // This is a single line comment, anything past // isn't executed
    comment */
 
 /* 
- * Multi-line comments have fallen out of style, but you can 
- * make them look really fancy
+ * Multi-line comments have fallen out of style (and aren't recommended),
+ * but you can make them look really fancy
  */
 
 /*****************************************
@@ -178,6 +178,33 @@ Logical: &&, ||, !
   var e = a !== b           // e is true
   var f = b === e           // f is false
 ```
+
+---
+
+## Casting
+
+When a variable's type doesn't match the required input types of the operation, JavaScript will try to cast (convert) the variable type so that it's valid. A few examples:
+
+```js
+  var a = "hello " + 123
+  
+  if (9000) {
+    console.log(a)
+  } else {
+    console.log("9000 wasn't casted to true")
+  }
+```
+
+Output:
+
+```terminal
+  $ node cast.js
+  hello 123
+```
+
+In this example, `123` was casted into a `string`, and then concatenated with `"hello "` to produce `"hello 123"`. An if statement evaluates a `Boolean`, not a `Number`; `9000` was casted to `true`.
+
+`a == b` returns `true` if `a` is similar to `b`, ie in the event of a type mismatch, `a` would be casted to `b`.
 
 ---
 
@@ -263,6 +290,40 @@ Output:
   1
   2
 ```
+
+---
+
+## While loop
+
+```js
+var a = 2
+
+while (a < 20) {
+  console.log(a)
+  a *= 2
+}
+```
+
+A while loop is a little more intuitive than a for loop: the loop body will continue executing until the condition evaluates to false. Here's a run-through of the program execution:
+
+* `a = 2`, so `a < 20` is true, therefore we execute the while loop body
+* `a *= 2`, so now `a = 4`. `a < 20` is true again, so we execute the loop body again...
+* Eventually, `a = 32`, so `a < 20` is false, therefore we do NOT execute the loop body and exit the loop
+
+Output:
+
+```terminal
+  $ node whileloop.js
+  2
+  4
+  8
+  16
+```
+
+---
+
+## Break and continue
+
 
 ---
 
