@@ -1,14 +1,54 @@
 class: inverse, middle, center
 
-# Installing and using Git and Bash
+# Installing and using Git bash
+### Or, alternatively, "Setting up a Windows environment"
 
 ---
 
-## Nomenclature
+## Foreword and nomenclature
+
+This tutorial is mainly intended for __Windows__ users, as Mac and Linux users already have a terminal, and can easily install Git using their respective package manager.
+
+I appreciate feedback; if you find a slide that's confusing or poorly written, please tell me and I'll revise it.
+
+<br />
 
 Below is a bit of technical nomenclature I'll be using:
 * Directory: A folder
 * Working directory: The folder you're currently working in
+
+---
+
+## Installing and configuring Git bash
+
+1. Go to the following link: https://git-scm.com/downloads
+2. Select your appropriate OS (likely Windows, 64-bit)
+3. You'll be prompted to download a file like `Git-2.15.1.2-64.exe`; save it in a place where you can find it
+4. Go to where you saved it, and open it
+5. In general, keep clicking "next"; don't deviate from the defaults and just install it
+  * Make sure you select __MinTTY__ as your terminal emulator
+  * Make sure you use __Vim__ as your text editor
+6. Git bash should now be installed; there should be a shortcut on your desktop
+  * If there isn't a shortcut on your desktop, check if it's in your start menu
+7. Right click the shortcut to Git bash, select "properties"
+8. In the shortcut menu, select the "Shortcut key" field and press `CTRL+ALT+T` (T for __t__erminal)
+9. Click OK
+10. You should now be able to open up Git bash by pressing `CTRL+ALT+T`
+
+Kudos if you got it to work successfully. The rest of this tutorial will be explaining what Git bash is, and how to use it.
+
+---
+
+## What is Git bash?
+
+Git bash, surprisely, has two components:
+* Git: A version control system
+* Bash: The __B__ourne __A__gain __Sh__ell, a shell (a command line interface)
+
+Git 
+
+Bash allows you to type commands 
+
 
 ---
 
@@ -36,6 +76,10 @@ After several hours, your folder looks something like this:
 
 This is an example of (poor) version control. Keeping track of previous versions is important, in case you want to revert to a previous version.
 
+---
+
+What is Git?
+
 So, why is this poor version control? It clutters your working directory, and it's unclear what changes were made in between drafts. What's the difference between `essayd2.docx` and `essayd3.docx`? The only way to figure that out is to open each file and compare the contents.
 
 Git is a program that handles version control for you: no need to make funky filenames with version numbers! Cool huh?
@@ -50,11 +94,11 @@ What's a shell? A shell is a user interface that allows users to interact with t
 
 ---
 
-## Installation
-
----
-
 ## Navigation in Bash
+
+`cd` stands for "Change directory", and is the "bread and butter" command of any shell.
+
+* 
 
 ---
 
