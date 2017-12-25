@@ -18,6 +18,7 @@ Below is a bit of technical nomenclature I'll be using:
 * Working directory: The folder you're currently working in
 * GUI: Graphic user interface 
 * CLI: Command line interface
+* dotfile: A file or directory that has a name that begins with a dot (eg `.git/`). Dotfiles are "hidden"
 
 ---
 
@@ -43,76 +44,46 @@ Kudos if you got it to work successfully. The rest of this tutorial will be expl
 
 ## What is Git bash?
 
-Git bash, surprisely, has two components:
+Git bash has two components:
 * Git: A version control system
+  * Git keeps track of previous versions of your source code, so you can revert easily if you make a mistake
 * Bash: The __B__ourne __A__gain __Sh__ell, a shell (a command line interface)
+  * Bash allows you execute programs and navigate using commands
 
-Git keeps track of previous versions of your source code, so you can revert back easily if you make a mistake
-
-Bash allows you execute programs and navigate using commands
-
-I'll be going into further detail in the next slides.
+I'll be going into further detail and providing examples in the next slides.
 
 ---
 
-## What is Git?
+## Commands in Bash
 
-Git is a __version control system__. What's version control?
-
-Suppose you have to write an essay, so you type up a rough draft and name it `essayrough.docx`:
-* You then begin the process of revising your essay, and save your second draft as `essayd2.docx`
-* After several revisions, you decide you want to change one of your main points in the essay body
-  * You do this, and append `alt` to versions that contain the modified point
-  * After spending a lot of time tweaking `essayd5alt.docx`, you decide you prefer your original point
-* You then continue to tweak `essayd4.docx` and save it as `essayfinal.docx`
-
-After several hours, your folder looks something like this:
+Commands often have options which can be toggled with flags. Example:
 
 ```terminal
-  essayrough.docx
-  essayd2.docx
-  essayd3.docx
-  essayd4.docx
-  essayd5alt.docx
-  essayfinal.docx
+  $ ls
+  afile.js somedirectory/
+  $ ls -a
+  ./ ../ .secretfile afile.js somedirectory/
 ```
 
-This is an example of (poor) version control. Regardless, poor version control is better than no version control; keeping track of previous versions is important, in case you want to revert to a previous version.
+`ls` lists the contents of your working directory, but doesn't display dotfiles, files and directories that begin with a `.`. `ls -a` is the same command, but with the `a` flag enabled. The `a` flag stands for "all", and displays all files and directories, including dotfiles.
+  
+Below is a list of common commands, along with useful flags:
 
----
-
-## What is Git?
-
-So, why is this poor version control? It clutters your working directory, and it's unclear what changes were made in between drafts. What's the difference between `essayd2.docx` and `essayd3.docx`? The only way to figure that out is to open each file and compare the contents.
-
-Git is a program that handles version control for you: no need to make funky filenames with version numbers! Cool huh?
-
----
-
-## What is Bash?
-
-Bash is an acronym for the __B__ourne __A__gain __Sh__ell, which is a modified version of Bourne's shell, a shell written by Stephen Bourne.
-
-What's a shell? A shell is a user interface that allows users to interact with the operating system. It could be a GUI, but people are usually referring to a CLI (command line interface) when they speak of a shell.
-
-In simple terms, you type a __command__, and something happens.
-
----
-
-## Common commmands in Bash
-
-
-
+* `explorer [DIR]` - Open a directory in the Windows file explorer
+* `start [FILE]` - Open a file, the GUI equivalent of clicking an icon
 * `man [COMMAND]` - `man` stands for "Manual", and will provide information on how to use the command
 * `ls` - List all files and directories in your working directory
   * `ls -a` - List with the `a` flag
 * `pwd` - Print working directory
 * `cd [DIR]` - Change directory
 * `rm [FILE]` - Remove a file
+  * WARNING: This does NOT put the file in the recycling bin; if you delete it, it's gone forever
+  * `rm -r [FILE/DIR]` - Recursively deletes a file (used for deleting directories)
 * `touch [FILE]` - Make a file
 * `mkdir [DIR]` - Make a directory
-* `rmdir [DIR]` - Remove a directory
-
+* `rmdir [DIR]` - Remove a directory (needs to be empty)
+* `cat [FILE]` - Print out the contents of a file
+* `vim [FILE]` - Edit a file with the vim text editor
 
 ---
 
@@ -154,7 +125,43 @@ Motions are navigation commands. The following command make you go to the...
 
 
 
+
 ---
+
+## What is Git?
+
+Git is a __version control system__. What's version control?
+
+Suppose you have to write an essay, so you type up a rough draft and name it `essayrough.docx`:
+* You then begin the process of revising your essay, and save your second draft as `essayd2.docx`
+* After several revisions, you decide you want to change one of your main points in the essay body
+  * You do this, and append `alt` to versions that contain the modified point
+  * After spending a lot of time tweaking `essayd5alt.docx`, you decide you prefer your original point
+* You then continue to tweak `essayd4.docx` and save it as `essayfinal.docx`
+
+After several hours, your folder looks something like this:
+
+```terminal
+  essayrough.docx
+  essayd2.docx
+  essayd3.docx
+  essayd4.docx
+  essayd5alt.docx
+  essayfinal.docx
+```
+
+This is an example of (poor) version control. Regardless, poor version control is better than no version control; keeping track of previous versions is important, in case you want to revert to a previous version.
+
+---
+
+## What is Git?
+
+So, why is this poor version control? It clutters your working directory, and it's unclear what changes were made in between drafts. What's the difference between `essayd2.docx` and `essayd3.docx`? The only way to figure that out is to open each file and compare the contents.
+
+Git is a program that handles version control for you: no need to make funky filenames with version numbers! Cool huh?
+
+---
+
 
 ## Introduction to version control
 
