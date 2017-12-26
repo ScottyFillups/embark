@@ -9,6 +9,8 @@ class: inverse, middle, center
 
 This tutorial is mainly intended for __Windows__ users, as Mac and Linux users already have a terminal, and can easily install Git using their respective package manager.
 
+The tutorial for Bash, Git, and Vim are all __*introductory*__ tutorials; you are highly encouraged to do your own research after completing this slideshow.
+
 I appreciate feedback; if you find a slide that's confusing or poorly written, please tell me and I'll revise it.
 
 <br />
@@ -56,6 +58,17 @@ I'll be going into further detail and providing examples in the next slides.
 
 ## Commands in Bash
 
+In your terminal emulator, MinTTY, you're able to type in __commands__. Entering a command prompts the shell to perform an __action__, for example:
+
+```terminal
+$ mkdir some-directory
+$ touch a-file.txt
+$ ls
+a-file.txt some-directory
+```
+
+`mkdir`, `touch`, and `ls` are all commands. `mkdir`, `touch`, and `ls` mean "make directory", "make file", and "list files and directories", respectively. In the above example, we make a directory (folder) named "some-directory" and a file named "a-file.txt", then use the `ls` command to print out all the things we created.
+
 Commands often have options which can be toggled with flags. Example:
 
 ```terminal
@@ -67,6 +80,10 @@ Commands often have options which can be toggled with flags. Example:
 
 `ls` lists the contents of your working directory, but doesn't display dotfiles, files and directories that begin with a `.`. `ls -a` is the same command, but with the `a` flag enabled. The `a` flag stands for "all", and displays all files and directories, including dotfiles.
   
+---
+
+## Commands in Bash
+
 Below is a list of common commands, along with useful flags:
 
 * `explorer [DIR]` - Open a directory in the Windows file explorer
