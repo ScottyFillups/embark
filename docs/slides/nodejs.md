@@ -35,11 +35,40 @@ $ npm -v
 
 ---
 
-## Using Node.js
+## Using Node.js in interactive mode
+
+Node.js comes with an interactive mode, where you can enter and evaluate JavaScript code one line at a time.
+
+To start interactive mode, just enter `node` into the terminal:
+
+```bash
+$ node
+> 40 + 40
+80
+> console.log('hello')
+hello
+>[2,3,4].map(x => x * 2)
+[4, 6, 8]
+```
+
+To close interactive mode, press `CTRL+C` twice.
+
+---
+
+## Running JavaScript scripts with Node.js
+
+Interactive mode is useful as a learning tool, but it isn't a practical for running large programs.
+
+Thankfully, Node.js is able to run JavaScript files; simply run `node [FILE]`.
+
+For example, suppose we have the following program saved as `hello-world.js`:
 
 ```js
+// hello-world.js
 console.log('Hello world!')
 ```
+
+We can run the program by entering `node hello-world.js` in our terminal:
 
 ```bash
 $ node hello-world.js
@@ -50,10 +79,24 @@ Hello world!
 
 ## Finding packages on NPM
 
+NPM allows you to import and use code from other developers.
+
 ```bash
-npm install @scottyfillups/hello-world --save
+$ npm init -y
+$ npm install @scottyfillups/hello-world --save
 ```
 
+```js
+// hello-world-npm.js
+var helloWorld = require('@scottyfillups/hello-world')
+
+helloWorld()
+```
+
+```bash
+$ node hello-world-npm.js
+hello, world
+```
 
 ---
 
