@@ -69,7 +69,7 @@ randomfile.txt somedirectory/
 
 `mkdir`, `touch`, and `ls` are all commands. `mkdir`, `touch`, and `ls` mean "make directory", "make file", and "list files and directories", respectively.
 
-In the above example, we make a directory (folder) named "some-directory" and a file named "a-file.txt", then use the `ls` command to print out all the things we created.
+In the above example, we make a directory (folder) named "somedirectory" and a file named "randomfile.txt", then use the `ls` command to print out all the things we created.
 
 ---
 
@@ -79,16 +79,16 @@ Commands often have options which can be toggled with flags. Example:
 
 ```terminal
 $ ls
-afile.js somedirectory/
+randomfile.txt somedirectory/
 $ ls -a
-./ ../ .secretfile afile.js somedirectory/
+./ ../ .secretfile randomfile.txt somedirectory/
 ```
 
 `ls` lists the contents of your working directory, but doesn't display dotfiles, files and directories that begin with a `.`. `ls -a` is the same command, but with the `a` flag enabled. The `a` flag stands for "all", and displays all files and directories, including dotfiles.
 
 You may have noticed `./` and `../` in the previous example: those are special directories
 * `./` refers to the directory you're currently in
-* `../` refers to the parent directory (the directory "above" the one you're currently in
+* `../` refers to the parent directory (the directory "above" the one you're currently in)
 
 ---
 
@@ -103,7 +103,7 @@ There are also reserved characters that act as shortcuts to important directorie
 * `~` is your home directory, which is usually `C:\Users\<YourName>`
 * `-` is the directory you last visited; think of the "back" button in a web browser
 
-Example (`pwd` means "print working directory", and prints which directory we're currently in):
+Example: (`pwd` means "print working directory", and prints which directory we're currently in)
 
 ```terminal
 $ cd ~
@@ -127,7 +127,7 @@ Below is a list of common commands, along with useful flags:
 * `start [FILE]` - Open a file, the GUI equivalent of clicking an icon
 * `man [COMMAND]` - `man` stands for "Manual", and will provide information on how to use the command
 * `ls` - List all files and directories in your working directory
-  * `ls -a` - List with the `a` flag
+  * `ls -a` - List all files, including dotfiles (hidden files)
 * `pwd` - Print working directory
 * `cd [DIR]` - Change directory
 * `rm [FILE]` - Remove a file
@@ -148,14 +148,14 @@ You can edit files in Git bash with Vim
 * You can edit a file with Vim by entering `vim [FILE]`
 
 Vim has three main modes:
-* `NORMAL`: Press keys to execute commands
-* `INSERT`: Enter text normally
-* `VISUAL`: Select blocks of text, similar to "click and drag"
+* `NORMAL` - Press keys to execute commands
+* `INSERT` - Enter text normally
+* `VISUAL` - Select blocks of text, similar to "click and drag"
 
 How to enter:
-* `NORMAL` mode: Press `esc`
-* `INSERT` mode: Press `i` (insert) or `a` (append, moves cursor forward one space)
-* `VISUAL` mode: Go into normal mode, then press `v`; `VISUAL` mode is really a subset of `NORMAL` mode
+* `NORMAL` mode - Press `esc`
+* `INSERT` mode - Press `i` (insert) or `a` (append, moves cursor forward one space)
+* `VISUAL` mode - Go into normal mode, then press `v`; `VISUAL` mode is really a subset of `NORMAL` mode
 
 ---
 
@@ -170,7 +170,7 @@ To get good at Vim, you need to practice:
 
 * Don't invest too much time trying to memorize commands! Instead, just go out of your way to use them
 * Always question whether there's a "better way" of doing things; remember, Google is your friend!
-  * If you're finding a certain task very difficult and repetitive, research whether there's a better way of doing things
+  * If you're finding a certain task very difficult and repetitive, research whether there's a better approach
 
 A final note: If you don't want to use Vim, you don't need to use it. If you prefer a text-editor with a GUI, I'd highly recommend [Atom](https://atom.io/).
 
@@ -213,7 +213,7 @@ A final note: If you don't want to use Vim, you don't need to use it. If you pre
 ## How to use Vim
 
 Operators are commands that manipulate the file contents:
-* They are often combined with a motion; `[M]` acts as a placeholder for a motion
+* They are often combined with a motion; I use `[M]` to denote a motion
 * An operator specifies __what__ you want to do, an __action__
 * A motion specifies __where__ you want to do something, a __direction__
 * If a block of text is selected via `VISUAL` mode, the operator will operate on the selected text (ie it doesn't take a motion)
@@ -225,6 +225,8 @@ Operators are commands that manipulate the file contents:
 * `p` - Paste
 * `o` - Insert a new line below the cursor and go into `INSERT` mode
 * `x` - Delete a single character
+
+So, for example, `dw` deletes a single word, while `d$` deletes text from your cursor to the end of the line.
 
 ---
 
@@ -276,14 +278,25 @@ This is an example of (poor) version control. Regardless, poor version control i
 
 ## What is Git?
 
-So, why is this poor version control? It clutters your working directory, and it's unclear what changes were made in between drafts. What's the difference between `essayd2.docx` and `essayd3.docx`? The only way to figure that out is to open each file and compare the contents.
+So, why is this poor version control?
+
+The previous example was poor version control because it led to a cluttered working directory, and it was difficult to determine what changes were made between drafts. What's the difference between `essayd2.docx` and `essayd3.docx`? The only way to figure that out is to open each file and compare the contents.
 
 Git is a program that handles version control for you: no need to make funky filenames with version numbers! Cool huh?
 
 ---
 
-
 ## Introduction to version control
+
+To create a new Git repository, run `git init`
+
+`git add`
+`git reset`
+`git diff`
+`git log`
+`git 
+`git commit -m "[MESSAGE]"`
+
 
 ---
 
