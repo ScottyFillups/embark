@@ -60,7 +60,7 @@ I'll be going into further detail and providing examples in the next slides.
 
 In your terminal emulator, MinTTY, you're able to type in __commands__. Entering a command prompts the shell to perform an __action__, for example:
 
-```terminal
+```bash
 $ mkdir somedirectory
 $ touch randomfile.txt
 $ ls
@@ -77,7 +77,7 @@ In the above example, we make a directory (folder) named "somedirectory" and a f
 
 Commands often have options which can be toggled with flags. Example:
 
-```terminal
+```bash
 $ ls
 randomfile.txt somedirectory/
 $ ls -a
@@ -105,7 +105,7 @@ There are also reserved characters that act as shortcuts to important directorie
 
 Example: (`pwd` means "print working directory", and prints which directory we're currently in)
 
-```terminal
+```bash
 $ cd ~
 $ pwd
 C:\Users\Philip
@@ -263,7 +263,7 @@ Suppose you have to write an essay, so you type up a rough draft and name it `es
 
 After several hours, your folder looks something like this:
 
-```terminal
+```bash
   essayrough.docx
   essayd2.docx
   essayd3.docx

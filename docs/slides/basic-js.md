@@ -76,7 +76,7 @@ variable declaration. A variable can also be reassigned to a different type:
 
 Output:
 
-```terminal
+```bash
   $ node test.js
   this is text
 ```
@@ -197,7 +197,7 @@ When a variable's type doesn't match the required input types of the operation, 
 
 Output:
 
-```terminal
+```bash
   $ node cast.js
   hello 123
 ```
@@ -226,7 +226,7 @@ In this example, `123` was casted into a `string`, and then concatenated with `"
 
 Output:
 
-```terminal
+```bash
   $ node elif.js
   foo is five
   foo is not four
@@ -284,8 +284,8 @@ What's happening?
 
 Output: 
 
-```terminal
-  $ node for-loop.js
+```bash
+  $ node forloop.js
   0
   1
   2
@@ -312,7 +312,7 @@ A while loop is a little more intuitive than a for loop: the loop body will cont
 
 Output:
 
-```terminal
+```bash
   $ node whileloop.js
   2
   4
@@ -349,7 +349,7 @@ console.log(factorial(4))
 
 Output:
 
-```terminal
+```bash
 $ node factorial.js
 Initial input was: 4
 24
@@ -377,7 +377,7 @@ console.log(add(15)(5) + b)
 
 Output:
 
-```terminal
+```bash
 $ node addCurry.js
 29
 ```
@@ -430,7 +430,7 @@ console.log('Hello, my name is ' + person.firstName + ' ' + person.lastName)
 
 Output:
 
-```terminal
+```bash
 $ node person.js
 Hello, my name is James Bond
 ```
@@ -445,7 +445,7 @@ For..in loops are used to traverse an object
   * Eg `coffee.key` won't work, so you MUST use bracket notation.
 
 ```js
-var coffee = { cost: 5.99, type: 'lattee', vendor: 'Starbucks' }
+var coffee = { cost: 5.99, coffee-type: 'lattee', vendor: 'Starbucks' }
 
 var keys = ''
 var values = ''
@@ -459,9 +459,9 @@ console.log(keys)
 console.log(values)
 ```
 
-```terminal
-$ node for-in.js
-cost type vendor
+```bash
+$ node forin.js
+cost coffee-type vendor
 5.99 lattee Starbucks
 ```
 
@@ -486,7 +486,7 @@ dog.bark()     // dog.bark returns a function, and then () invokes it
 ```
 
 Output:
-```terminal
+```bash
 $ node dog.js
 woof woof!
 ```

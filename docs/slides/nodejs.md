@@ -1,6 +1,6 @@
 class: inverse, middle, center
 
-Node.js and NPM
+# Node.js and NPM
 
 ---
 
@@ -26,7 +26,7 @@ Node.js and NPM
 
 The `v` flag will cause `node` and `npm` to output the version number. If the installation went smoothly, you should see something like this: (numbers don't need to match)
 
-```terminal
+```bash
 $ node -v
 v9.3.0
 $ npm -v
@@ -41,7 +41,7 @@ $ npm -v
 console.log('Hello world!')
 ```
 
-```terminal
+```bash
 $ node hello-world.js
 Hello world!
 ```
@@ -50,6 +50,9 @@ Hello world!
 
 ## Finding packages on NPM
 
+```bash
+npm install @scottyfillups/hello-world --save
+```
 
 
 ---
