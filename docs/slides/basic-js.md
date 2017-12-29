@@ -7,7 +7,7 @@ class: inverse, middle, center
 
 ## A note on purpose, ES6, and style
 
-This slideshow is very brief, and is meant to provide examples and explanations of the "essentials" (of course, that's subjective). 
+This slideshow is (somewhat) brief, and is meant to provide examples and explanations of the "essentials" (of course, that's subjective). 
 
 I also omit some details which I believe will confuse beginners:
 * `var` vs `let` vs `const`
@@ -19,10 +19,10 @@ In regard to style, I use the [Standard](https://standardjs.com/) style guide. T
 The only "gotcha" with Standard is you need to prepend a `';'` if you're starting a line with `'['` or `'('`:
 
 ```js
-  var a = 5
+var a = 5
 
-  (function () { console.log(a) })()    // error!
-  ;(function () { console.log(a) })()   // no error! :)
+(function () { console.log(a) })()    // error!
+;(function () { console.log(a) })()   // no error! :)
 ```
 
 ---
@@ -62,23 +62,23 @@ console.log(printer.get())
 
 To declare a variable, use the `var` keyword
 
-JavaScript is _loosely typed_, which means you don't need specify a type during
+JavaScript is _loosely typed_, which means you don't need to specify a type during
 variable declaration. A variable can also be reassigned to a different type:
 
 ```js
-  var someVariable = 5
-  
-  someVariable = true
-  someVariable = "this is text"
+var someVariable = 5
 
-  console.log(someVariable)
+someVariable = true
+someVariable = "this is text"
+
+console.log(someVariable)
 ```
 
 Output:
 
 ```bash
-  $ node test.js
-  this is text
+$ node vars.js
+this is text
 ```
 
 ---
@@ -102,9 +102,8 @@ There are five primitive data types in JavaScript:
   var alsoNotDefined
 ```
 
-If a variable is not initialized to anything, it defaults to
-`undefined` until it's assigned to something. `null` is similar to 
-`undefined`, but nobody uses it.
+If a variable is not initialized to anything, it defaults to `undefined` until it's assigned to something.
+`null` is used to denote a variable that shouldn't be storing a valid value; `null` is rarely used in practice
 
 ---
 
@@ -139,15 +138,15 @@ var a = 5   // This is a single line comment, anything past // isn't executed
 
 ## Operators
 
-Arithmetic: +, -, *, /, %
+Arithmetic: `+`, `-`, `*`, `/`, `%`
 * Follows the typical order of operations (BEDMAS)
 * `+` also used for string concatenation, eg `'string' + 'abc' === 'stringabc'`
-* % is the remainder operator
+* `%` is the remainder operator
   * Returns the remainder of an integer division (no decimals)
   * Eg, consider 22 divided by 5: `22 === 5 * 4 + 2`
   * 5 is the divisor, 4 is the quotient, and 2 is the remainder
 
-Assignment: =, +=, -=, *=, /=
+Assignment: `=`, `+=`, `-=`, `*=`, `/=`
 * Assignment operators like `x += y` are just short form for `x = x + y`
 
 ```js
@@ -160,15 +159,15 @@ a = 23 % 3        // a is 2 (23 === 3 * 7 + 2)
 ---
 ## Operators
 
-Comparison: !==, ===, >, >=, <, <=
+Comparison: `!==`, `===`, `>`, `>=`, `<`, `<=`
 * Don't use `!=` and `==`, as they have unexpected behaviour
 * `===` denotes equality, while `!==` denotes inequality
 
-Logical: &&, ||, !
+Logical: `&&`, `||`, `!`
 * Used on boolean expressions
-* && denotes AND
-* || denotes OR
-* ! denotes NOT
+* `&&` denotes AND
+* `||` denotes OR
+* `!` denotes NOT
 
 ```js
   var a = true || false     // a is true
@@ -183,7 +182,7 @@ Logical: &&, ||, !
 
 ## Casting
 
-When a variable's type doesn't match the required input types of the operation, JavaScript will try to cast (convert) the variable type so that it's valid. A few examples:
+When a variable's type doesn't match the required types of some operation, JavaScript will try to cast (convert) the variable's type so that it's valid. A few examples:
 
 ```js
   var a = "hello " + 123
@@ -202,13 +201,15 @@ Output:
   hello 123
 ```
 
-In this example, `123` was casted into a `string`, and then concatenated with `"hello "` to produce `"hello 123"`. An if statement evaluates a `Boolean`, not a `Number`; `9000` was casted to `true`.
+In this example, `123` was casted into a `string`, and then concatenated with `"hello "` to produce `"hello 123"`. Non-zero numbers are casted to `true` (eg `9000`, `-1`), while `0` is casted to `false`.
 
-`a == b` returns `true` if `a` is similar to `b`, ie in the event of a type mismatch, `a` would be casted to `b`.
+`a == b` returns `true` if `a` is similar to `b`; ie. in the event of a type mismatch, `a` would be casted to `b`.
 
 ---
 
-## If-else Statement
+## If-else statement
+
+If-else statements are rather straightforward; I believe the best way to learn is reading the following example:
 
 ```js
   var foo = 5
@@ -231,6 +232,12 @@ Output:
   foo is five
   foo is not four
 ```
+
+---
+
+## Switch statement
+
+
 
 ---
 
@@ -319,6 +326,10 @@ Output:
   8
   16
 ```
+
+---
+
+## Do-while loop
 
 ---
 
