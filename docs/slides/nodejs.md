@@ -8,6 +8,8 @@ class: inverse, middle, center
 
 * Node.js is a JavaScript runtime
   * In simple terms, you write a program in JavaScript, and Node.js executes your program
+  * JavaScript is a programming language; you don't need to know much JavaScript to understand this slideshow
+  * JavaScript will be covered in the next tutorial, so don't worry!
 * NPM is a package manager for Node.js
   * NPM stands for Node.js Package Manager
   * NPM allows you to import modules written by other people
@@ -64,7 +66,7 @@ Thankfully, Node.js is able to run JavaScript files; simply run `node [FILE]`.
 For example, suppose we have the following program saved as `hello-world.js`:
 
 ```js
-// hello-world.js
+// This is a file called hello-world.js
 console.log('Hello world!')
 ```
 
@@ -77,17 +79,34 @@ Hello world!
 
 ---
 
-## Finding packages on NPM
+## Finding and using packages on NPM
 
-NPM allows you to import and use code from other developers.
+* NPM allows you to import and use code written by other developers
+* You can look for packages on the [NPM website](https://www.npmjs.com/)
+* To start using packages, you first need to generate a `package.json`
+  * To generate a `package.json` file, enter `npm init`, or `npm init -y` (uses defaults)
+  * A `package.json` keeps track of your dependencies (your installed packages)
+  * Installed packages are saved in a folder called `node_modules/`
+  * To save space, we exclude `node_modules` from our Git repo, ie we add `/node_modules` to our `.gitignore` file
+  * If somebody else clones your repository, they can use `npm install` to install all your dependencies in your `package.json`
+* To install packages, do `npm install [PACKAGE NAME] --save`
+  * `--save` will update `package.json` to include the new dependency in the `dependencies` object
+
+---
+
+## Finding and using packages on NPM
+
+Below is an example where I install and use a module I wrote called `@scottyfillups/hello-world`, found [here](https://www.npmjs.com/package/@scottyfillups/hello-world)
+
 
 ```bash
 $ npm init -y
 $ npm install @scottyfillups/hello-world --save
+$ cat package.json
 ```
 
 ```js
-// hello-world-npm.js
+// This is a file called hello-world-npm.js
 var helloWorld = require('@scottyfillups/hello-world')
 
 helloWorld()
@@ -97,7 +116,4 @@ helloWorld()
 $ node hello-world-npm.js
 hello, world
 ```
-
----
-
 
