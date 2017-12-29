@@ -331,10 +331,84 @@ Output:
 
 ## Do-while loop
 
+A do-while loop is essentially a while loop, but with one difference: it's guaranteed to execute the loop body _at least once_.
+* With a while loop, the condition is checked first, then the loop body is executed
+* With a do-while loop, the loop body is executed, then the condition is checked to determine whether to continue looping
+
+```js
+var a = 2
+
+do {
+  console.log(a)
+  a *= 2
+} while (a < 1)
+```
+
+Output:
+
+```bash
+$ node dowhile.js
+2
+```
+
 ---
 
-## Break and continue
+## Break
 
+Sometimes you may want to _break_ out of a loop prematurely: 
+
+```js
+var a = 5
+
+while (a > 0) {
+  console.log(a)
+  a += 1
+  if (a === 8) {
+    break;
+  }
+}
+```
+
+In this example, we see that the condition in the while loop, `a > 0`, will always be true, since a is initialized to 5 and increments by 1 each iteration. 
+
+However, once `a === 8` is true, the program will `break` out of the loop.
+
+Output:
+
+```bash
+$ node break.js
+5
+6
+7
+```
+
+---
+
+## Continue
+
+Sometimes you may want to skip the rest of the loop body and _continue_ to the next loop iteration.
+
+In the example below, if `i % 2 === 0` (if `i` is even), then the loop skips the rest of the body (in this case, it skips over `console.log(i)`).
+
+As a result, the following program prints out only odd numbers:
+
+```js
+for (var i = 0; i < 6; i++) {
+  if (i % 2 === 0) {
+    continue
+  }
+  console.log(i)
+}
+```
+
+Output:
+
+```bash
+$ node continue.js
+1
+3
+5
+```
 
 ---
 
