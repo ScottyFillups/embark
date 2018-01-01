@@ -60,7 +60,11 @@ console.log(printer.get())
 
 ## Variable declaration and data types
 
-To declare a variable, use the `var` keyword
+To declare a variable, use the `var` keyword.
+
+Variables must:
+* begin with a letter or underscore, and can only contain letters, numbers, and underscores
+* not be a keyword, ie. a word that's part of the JavaScript language, like `var` or `function`
 
 JavaScript is _loosely typed_, which means you don't need to specify a type during
 variable declaration. A variable can also be reassigned to a different type:
@@ -93,13 +97,13 @@ There are five primitive data types in JavaScript:
 * Null
 
 ```js
-  var number = 3.14
-  var boolean = true
-  var string = "a string is a sequence of characters"
+var number = 3.14
+var boolean = true
+var string = "a string is a sequence of characters"
 
-  var nullValue = null
-  var notDefined = undefined
-  var alsoNotDefined
+var nullValue = null
+var notDefined = undefined
+var alsoNotDefined
 ```
 
 If a variable is not initialized to anything, it defaults to `undefined` until it's assigned to something.
@@ -170,12 +174,12 @@ Logical: `&&`, `||`, `!`
 * `!` denotes NOT
 
 ```js
-  var a = true || false     // a is true
-  var b = true && false     // b is false
-  var c = !true             // c is false
-  var d = !false            // d is true
-  var e = a !== b           // e is true
-  var f = b === e           // f is false
+var a = true || false     // a is true
+var b = true && false     // b is false
+var c = !true             // c is false
+var d = !false            // d is true
+var e = a !== b           // e is true
+var f = b === e           // f is false
 ```
 
 ---
@@ -185,20 +189,20 @@ Logical: `&&`, `||`, `!`
 When a variable's type doesn't match the required types of some operation, JavaScript will try to cast (convert) the variable's type so that it's valid. A few examples:
 
 ```js
-  var a = "hello " + 123
-  
-  if (9000) {
-    console.log(a)
-  } else {
-    console.log("9000 wasn't casted to true")
-  }
+var a = "hello " + 123
+
+if (9000) {
+  console.log(a)
+} else {
+  console.log("9000 wasn't casted to true")
+}
 ```
 
 Output:
 
 ```bash
-  $ node cast.js
-  hello 123
+$ node cast.js
+hello 123
 ```
 
 In this example, `123` was casted into a `string`, and then concatenated with `"hello "` to produce `"hello 123"`. Non-zero numbers are casted to `true` (eg `9000`, `-1`), while `0` is casted to `false`.
@@ -209,34 +213,70 @@ In this example, `123` was casted into a `string`, and then concatenated with `"
 
 ## If-else statement
 
-If-else statements are rather straightforward; I believe the best way to learn is reading the following example:
+`if-else` statements are rather straightforward; I believe the best way to learn is reading the following example:
 
 ```js
-  var foo = 5
+var foo = 5
 
-  if (foo === 5) {
-    console.log('foo is five')
-  }
+if (foo === 5) {
+  console.log('foo is five')
+}
 
-  if (foo === 4) {
-    console.log('foo is four')
-  } else {
-    console.log('foo is not four')
-  }
+if (foo === 4) {
+  console.log('foo is four')
+} else {
+  console.log('foo is not four')
+}
 ```
 
 Output:
 
 ```bash
-  $ node elif.js
-  foo is five
-  foo is not four
+$ node elif.js
+foo is five
+foo is not four
+```
+
+---
+
+## If-else statement
+
+If-else statements can also be nested:
+
+```js
+var isSunny = true
+
+if (!isSunny) {
+  console.log( 
+
+```js
+var mark = 88
+
+if (mark > 80) {
+  console.log('A')
+} else if (mark > 70) {
+  console.log('B')
+} else if (mark > 60) {
+  console.log('C')
+} else if (mark > 50) {
+  console.log('D')
+} else {
+  console.log('F')
+}
+```
+
+Output: 
+
+```bash
+$ node chain.js
+A
 ```
 
 ---
 
 ## Switch statement
 
+When creating large 
 
 
 ---
@@ -417,8 +457,7 @@ $ node continue.js
 Functions can be declared with the `function` keyword. JavaScript is a functional language, and lets you do the following things:
 * Nest functions inside other functions
 * Treat functions as values
-  * This means you can pass functions as arguments to other functions
-  * You can also return functions
+  * This means you can return functions from functions, and pass them as arguments
 
 ```js
 function factorial (x) {
