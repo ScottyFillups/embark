@@ -1,0 +1,49 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "",
+            "title": "Home"
+        },
+        {
+            "location": "/nodejs/",
+            "text": "Node.js and NPM\n\n\n\n\nWhat is Node.js and NPM?\n\n\n\n\nNode.js is a JavaScript runtime\n\n\nIn simple terms, you write a program in JavaScript, and Node.js executes your program\n\n\nJavaScript is a programming language; you don't need to know much JavaScript to understand this slideshow\n\n\nJavaScript will be covered in the next tutorial, so don't worry!\n\n\nNPM is a package manager for Node.js\n\n\nNPM stands for Node.js Package Manager\n\n\nNPM allows you to import modules written by other people\n\n\n\n\n\n\nInstalling Node.js and NPM\n\n\n\n\nDownload Node.js \nhere\n (select the recommended version)\n\n\nRun the installer and just mash that \nNEXT\n button, and just use the defaults\n\n\nRestart your PC\n\n\nOpen up Git bash enter the following commands:\n\n\nnode -v\n\n\nnpm -v\n\n\n\n\nThe \nv\n flag will cause \nnode\n and \nnpm\n to output the version number. If the installation went smoothly, you should see something like this: (numbers don't need to match)\n\n\n$ node -v\nv9.3.0\n$ npm -v\n5.6.0\n\n\n\n\n\n\nUsing Node.js in interactive mode\n\n\nNode.js comes with an interactive mode, where you can enter and evaluate JavaScript code one line at a time.\n\n\nTo start interactive mode, just enter \nnode\n into the terminal:\n\n\n$ node\n> 40 + 40\n80\n> console.log('hello')\nhello\n>[2,3,4].map(x => x * 2)\n[4, 6, 8]\n\n\n\n\nTo close interactive mode, press \nCTRL+C\n twice.\n\n\n\n\nRunning JavaScript scripts with Node.js\n\n\nInteractive mode is useful as a learning tool, but it isn't a practical for running large programs.\n\n\nThankfully, Node.js is able to run JavaScript files; simply run \nnode [FILE]\n.\n\n\nFor example, suppose we have the following program saved as \nhello-world.js\n:\n\n\n// This is a file called hello-world.js\nconsole.log('Hello world!')\n\n\n\n\nWe can run the program by entering \nnode hello-world.js\n in our terminal:\n\n\n$ node hello-world.js\nHello world!\n\n\n\n\n\n\nFinding and using packages on NPM\n\n\n\n\nNPM allows you to import and use code written by other developers\n\n\nYou can look for packages on the \nNPM website\n\n\nTo start using packages, you first need to generate a \npackage.json\n\n\nTo generate a \npackage.json\n file, enter \nnpm init\n, or \nnpm init -y\n (uses defaults)\n\n\nA \npackage.json\n keeps track of your dependencies (your installed packages)\n\n\nInstalled packages are saved in a folder called \nnode_modules/\n\n\nTo save space, we exclude \nnode_modules\n from our Git repo, ie we add \n/node_modules\n to our \n.gitignore\n file\n\n\nIf somebody else clones your repository, they can use \nnpm install\n to install all your dependencies in your \npackage.json\n\n\nTo install packages, do \nnpm install [PACKAGE NAME] --save\n\n\n--save\n will update \npackage.json\n to include the new dependency in the \ndependencies\n object\n\n\n\n\n\n\nFinding and using packages on NPM\n\n\nBelow is an example where I install and use a module I wrote called \n@scottyfillups/hello-world\n, found \nhere\n\n\n$ npm init -y\n$ npm install @scottyfillups/hello-world --save\n$ cat package.json\n\n\n\n\n// This is a file called hello-world-npm.js\nvar helloWorld = require('@scottyfillups/hello-world')\n\nhelloWorld()\n\n\n\n\n$ node hello-world-npm.js\nhello, world",
+            "title": "Node"
+        },
+        {
+            "location": "/nodejs/#nodejs-and-npm",
+            "text": "",
+            "title": "Node.js and NPM"
+        },
+        {
+            "location": "/nodejs/#what-is-nodejs-and-npm",
+            "text": "Node.js is a JavaScript runtime  In simple terms, you write a program in JavaScript, and Node.js executes your program  JavaScript is a programming language; you don't need to know much JavaScript to understand this slideshow  JavaScript will be covered in the next tutorial, so don't worry!  NPM is a package manager for Node.js  NPM stands for Node.js Package Manager  NPM allows you to import modules written by other people",
+            "title": "What is Node.js and NPM?"
+        },
+        {
+            "location": "/nodejs/#installing-nodejs-and-npm",
+            "text": "Download Node.js  here  (select the recommended version)  Run the installer and just mash that  NEXT  button, and just use the defaults  Restart your PC  Open up Git bash enter the following commands:  node -v  npm -v   The  v  flag will cause  node  and  npm  to output the version number. If the installation went smoothly, you should see something like this: (numbers don't need to match)  $ node -v\nv9.3.0\n$ npm -v\n5.6.0",
+            "title": "Installing Node.js and NPM"
+        },
+        {
+            "location": "/nodejs/#using-nodejs-in-interactive-mode",
+            "text": "Node.js comes with an interactive mode, where you can enter and evaluate JavaScript code one line at a time.  To start interactive mode, just enter  node  into the terminal:  $ node\n> 40 + 40\n80\n> console.log('hello')\nhello\n>[2,3,4].map(x => x * 2)\n[4, 6, 8]  To close interactive mode, press  CTRL+C  twice.",
+            "title": "Using Node.js in interactive mode"
+        },
+        {
+            "location": "/nodejs/#running-javascript-scripts-with-nodejs",
+            "text": "Interactive mode is useful as a learning tool, but it isn't a practical for running large programs.  Thankfully, Node.js is able to run JavaScript files; simply run  node [FILE] .  For example, suppose we have the following program saved as  hello-world.js :  // This is a file called hello-world.js\nconsole.log('Hello world!')  We can run the program by entering  node hello-world.js  in our terminal:  $ node hello-world.js\nHello world!",
+            "title": "Running JavaScript scripts with Node.js"
+        },
+        {
+            "location": "/nodejs/#finding-and-using-packages-on-npm",
+            "text": "NPM allows you to import and use code written by other developers  You can look for packages on the  NPM website  To start using packages, you first need to generate a  package.json  To generate a  package.json  file, enter  npm init , or  npm init -y  (uses defaults)  A  package.json  keeps track of your dependencies (your installed packages)  Installed packages are saved in a folder called  node_modules/  To save space, we exclude  node_modules  from our Git repo, ie we add  /node_modules  to our  .gitignore  file  If somebody else clones your repository, they can use  npm install  to install all your dependencies in your  package.json  To install packages, do  npm install [PACKAGE NAME] --save  --save  will update  package.json  to include the new dependency in the  dependencies  object",
+            "title": "Finding and using packages on NPM"
+        },
+        {
+            "location": "/nodejs/#finding-and-using-packages-on-npm_1",
+            "text": "Below is an example where I install and use a module I wrote called  @scottyfillups/hello-world , found  here  $ npm init -y\n$ npm install @scottyfillups/hello-world --save\n$ cat package.json  // This is a file called hello-world-npm.js\nvar helloWorld = require('@scottyfillups/hello-world')\n\nhelloWorld()  $ node hello-world-npm.js\nhello, world",
+            "title": "Finding and using packages on NPM"
+        }
+    ]
+}
