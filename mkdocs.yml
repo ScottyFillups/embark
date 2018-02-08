@@ -1,4 +1,6 @@
-site_name: Learning stuff
+site_name: Embark
+theme: cinder
+repo_url: https://github.com/ScottyFillups/embark
 pages:
   - Home: index.md
   - Node: nodejs.md
