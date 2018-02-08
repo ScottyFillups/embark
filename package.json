@@ -1,0 +1,13 @@
+{
+  "name": "embark",
+  "version": "1.0.0",
+  "scripts": {
+    "prepush": "mkdocs gh-deploy"
+  },
+  "repository": "git@github.com:ScottyFillups/embark.git",
+  "author": "Philip Scott <pscott@zeptohost.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "husky": "^0.14.3"
+  }
+}
